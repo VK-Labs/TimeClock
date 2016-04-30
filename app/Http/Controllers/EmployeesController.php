@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Organization;
-use App\Store;
+use App\Employee;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class StoresController extends Controller
+class EmployeesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +16,10 @@ class StoresController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
+        $employees = Employee::all();
         $organizations = Organization::lists('name', 'id');
 
-        return view('stores.index', compact('stores', 'organizations'));
+        return view('stores.index', compact('employees', 'organizations'));
     }
 
     /**
@@ -30,8 +29,7 @@ class StoresController extends Controller
      */
     public function create()
     {
-        $organizations = Organization::lists('name', 'id');
-        return view('stores.create')->with('organization', $organizations);
+        //
     }
 
     /**

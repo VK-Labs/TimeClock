@@ -1,5 +1,5 @@
 <title>CSSP Team Create</title>
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -30,9 +30,9 @@
                                     {!! Form::text('number', null, ['class' => 'form-control', 'id' => 'number']) !!}
                                 </div>
 
-                                {!! Form::label('Sport', 'Sport Type:', ['class' => 'col-md-2 control-label']) !!}
+                                {!! Form::label('Organization', 'Organization:', ['class' => 'col-md-2 control-label']) !!}
                                 <div class="col-md-4">
-                                    {!! Form::select('sport', $sport, null, array('class' => 'form-control')) !!}
+                                    {!! Form::select('organization', $organization, null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
 

@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::resource('organizations', 'OrganizationsController');
 Route::resource('stores', 'StoresController');
+Route::resource('employees', 'EmployeesController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
