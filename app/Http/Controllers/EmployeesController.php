@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Organization;
+use App\Store;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,9 +19,9 @@ class EmployeesController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        $organizations = Organization::lists('name', 'id');
+        $stores = Store::lists('name', 'id');
 
-        return view('stores.index', compact('employees', 'organizations'));
+        return view('employees.index', compact('employees', 'stores'));
     }
 
     /**
@@ -29,7 +31,8 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        //
+        $stores = Store::lists('name', 'id');
+        return view('employees.create')->with('stores', $stores);
     }
 
     /**
@@ -40,7 +43,16 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->has('FirstName')) {
+            $employee = new Employee;
+
+            $employee->firstName = $request->FirstName;
+            $employee->lastName = $request->LastName;
+            $employee->storeID = $request->store;
+            $employee->save();
+        }
+
+        return redirect()->action('EmployeesController@index');
     }
 
     /**

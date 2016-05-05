@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/teams') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/stores') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group num">
@@ -40,9 +40,9 @@
 
                             <div class="form-group teamname">
                                 {{--<div class="teamname"></div>--}}
-                                {!! Form::label('TeamName', 'Team Name:', ['class' => 'col-md-4 control-label']) !!}
+                                {!! Form::label('StoreName', 'Store Name:', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('TeamName[]', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('StoreName', null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 

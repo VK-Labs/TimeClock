@@ -42,7 +42,15 @@ class StoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->has('StoreName')) {
+            $store = new Store;
+
+            $store->name = $request->StoreName;
+            $store->organizationID = $request->organization;
+            $store->save();
+        }
+
+        return redirect()->action('StoresController@index');
     }
 
     /**

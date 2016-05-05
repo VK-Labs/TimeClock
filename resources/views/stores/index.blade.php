@@ -7,9 +7,8 @@
 
     @foreach($stores as $store)
         <team>
-            <h2><a href=" {{ url('/teams', [$store->id]) }}" >{{ $team->name }}</a></h2>
-            <div class="body">{{ $store->password }}</div>
-            <div class="body">{{ $organization[$store->orgazationID] }}</div>
+            <h2><a href=" {{ url('/stores', [$store->id]) }}" >{{ $store->name }}</a></h2>
+            <div class="body">{{ $organizations[$store->organizationID] }}</div>
         </team>
     @endforeach
 @stop

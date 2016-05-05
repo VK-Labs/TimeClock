@@ -16,8 +16,8 @@ class CreateEmployeesTable extends Migration
             $table->increments('id');
             $table->integer('storeID')->unsigned();
             $table->foreign('storeID')->references('id')->on('stores')->onDelete('cascade');
-            $table->string('firstName')->unique();
-            $table->string('lastName')->unique();
+            $table->string('firstName');
+            $table->string('lastName');
             $table->boolean('flag');
             $table->timestamps();
         });
