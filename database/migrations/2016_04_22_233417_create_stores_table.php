@@ -15,6 +15,7 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->integer('pin')->unique();
             $table->integer('organizationID')->unsigned();
             $table->foreign('organizationID')->references('id')->on('organizations')->onDelete('cascade');
             $table->timestamps();
