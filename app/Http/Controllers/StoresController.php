@@ -43,10 +43,18 @@ class StoresController extends Controller
     public function store(Request $request)
     {
         if ($request->has('StoreName')) {
+            $temppin = random_int(1000,9999);
+
             $store = new Store;
+
+            while ($temppin == Store::where('pin', '=', $temppin)->exists()) {
+                echo $temppin . "</br>";
+                $temppin = random_int(1000,9999);
+            }
 
             $store->name = $request->StoreName;
             $store->organizationID = $request->organization;
+            $store->pin = $temppin;
             $store->save();
         }
 

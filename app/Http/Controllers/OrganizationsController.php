@@ -39,9 +39,17 @@ class OrganizationsController extends Controller
     public function store(Request $request)
     {
         if ($request->has('name')) {
+            $temppin = random_int(1000,9999);
+
+            while ($temppin == Organization::where('pin', '=', $temppin)->exists()) {
+                echo $temppin . "</br>";
+                $temppin = random_int(1000,9999);
+            }
+
             $organization = new Organization;
 
             $organization->name = $request->name;
+            $organization->pin = $temppin;
             $organization->save();
         }
 

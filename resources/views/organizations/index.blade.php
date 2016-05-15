@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Organizations</h1>
+    <title>Organizations - Time Clock</title>
+    <h1>Organizations {{ $organizations->count() }}</h1>
 
     <hr/>
 
     @foreach($organizations as $organization)
-        <team>
-            <div class="list-group-item col-md-2 col-md-offset-5 text-center"><a href=" {{ url('/organizations', [$organization->id]) }}" >{{ $organization->name}}</a></div>
-        </team>
+        <organizations>
+            <div class="list-group-item col-md-2 col-md-offset-5 text-center">
+                <a href=" {{ url('/organizations', [$organization->id]) }}" >{{ $organization->name }}</a></br>
+                {{ $organization->pin }}
+            </div>
+        </organizations>
     @endforeach
 @stop
