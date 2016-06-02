@@ -5,4 +5,16 @@ $(document).ready(function () {
         var pin = $('#pin');
         $(pin).val(pin.val() + text);
     });
+
+    $("#remove").click(function () {
+        $(pin).val(
+            function(index, value){
+                return value.substr(0, value.length -1);
+            }
+        )
+    })
+
+    $("#ok").click(function () {
+        alert($(pin).val());
+    })
 });

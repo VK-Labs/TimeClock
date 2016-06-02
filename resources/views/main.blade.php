@@ -12,7 +12,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
-                                <form><input type="text" name="pin" id="pin" class="form-control text-center input-lg"></form>
+                                <form><input type="tel" name="pin" id="pin" class="form-control text-center input-lg"></form>
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +84,7 @@
                                     <div class="span4">
                                         <div class="num">
                                             <div class="txt">
-                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-remove" id="remove" aria-hidden="true"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                     <div class="span4">
                                         <div class="num">
                                             <div class="txt">
-                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-ok" id="ok" aria-hidden="true" onclick=""></span>
                                             </div>
                                         </div>
                                     </div>

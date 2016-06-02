@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
-
+//Route::get('/', function () {
+//    return view('main');
+//});
+Route::get('/', 'MainController@index');
 Route::resource('organizations', 'OrganizationsController');
 Route::resource('stores', 'StoresController');
 Route::resource('employees', 'EmployeesController');
