@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 
 class MainController extends Controller
 {
@@ -24,6 +25,11 @@ class MainController extends Controller
             return view('Welcome');
         }
 
+    }
+
+    public function cookie()
+    {
+        return Input::all();
     }
 
     /**

@@ -15,6 +15,7 @@
 //    return view('main');
 //});
 Route::get('/', 'MainController@index');
+Route::post('main', 'MainController@cookie');
 Route::resource('organizations', 'OrganizationsController');
 Route::resource('stores', 'StoresController');
 Route::resource('employees', 'EmployeesController');
