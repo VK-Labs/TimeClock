@@ -29,7 +29,7 @@ class MainController extends Controller
 
     public function cookie()
     {
-        return Input::all();
+        return Input::get('pin');
     }
 
     /**
