@@ -20,14 +20,20 @@ $(document).ready(function () {
     })
 
     $("#ok").click(function () {
-        $.ajax({
-            type: 'POST',
-            url: 'main',
-            data: {pin:$(pin).val(), _token:$('meta[name="csrf-token"]').attr('content')},
-            success: function(data){
-                return data;
-            }
-        })
+        if ($(".panel-heading").text() == "Organization Pin"){
+            orgPin = $(pin).val();
+            $(".panel-heading").text("Store Pin");
+            $(pin).val("");
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: 'main',
+                data: {orgPin: orgPin, storePin: $(pin).val(), _token: $('meta[name="csrf-token"]').attr('content')},
+                success: function (data) {
+                    return data;
+                }
+            })
+        }
 
     });
 });
