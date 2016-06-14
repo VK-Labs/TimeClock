@@ -20,7 +20,7 @@ class MainController extends Controller
         $value =  $request->cookie('TimeClockLocation');
 
         if (!$value) {
-            return view('Main');
+            return view('StoreLogin');
         } else {
             return view('Welcome');
         }
