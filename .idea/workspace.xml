@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7214844-a19b-419f-a2d6-b9443dc41c36" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/storelogin.blade.php" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" />
     </list>
     <ignored path="TimeClock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="441">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -567,7 +567,7 @@
       <workItem from="1465710576146" duration="155000" />
       <workItem from="1465710889582" duration="616000" />
       <workItem from="1465792833697" duration="868000" />
-      <workItem from="1465865467973" duration="792000" />
+      <workItem from="1465865467973" duration="1514000" />
     </task>
     <task id="LOCAL-00001" summary="06132016.01">
       <created>1465866123160</created>
@@ -576,11 +576,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465866123160</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="06132016.02">
+      <created>1465866270579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1465866270579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48742000" />
+    <option name="totallyTimeSpent" value="49464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1176" extended-state="6" />
@@ -621,7 +628,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="06132016.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="06132016.01" />
+    <MESSAGE value="06132016.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="06132016.02" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -966,10 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/storelogin.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="441">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -977,7 +985,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
