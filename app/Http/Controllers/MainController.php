@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Cookie\CookieJar;
 
 use App\Http\Requests;
 use App\Organization;
@@ -30,17 +31,46 @@ class MainController extends Controller
 
     }
 
-    public function cookie()
+    public function cookie(CookieJar $cookieJar)
     {
         $orgPin = Input::get('orgPin');
         $storePin = Input::get('storePin');
 
         $org = DB::table('organizations')->where('pin', '=', $orgPin)->first();
 
-        if (!$org)
-        $store = DB::table('stores')->where('pin', '=', $storePin)->where('OrganizationID', '=', $org->id)->first();
+        if ($org == null) {
+            return redirect('/');
+        } else {
+            $store = DB::table('stores')->where('pin', '=', $storePin)->where('OrganizationID', '=', $org->id)->first();
+            if ($store == null) {
+                return redirect('main');
+            } else {
+                $cookieJar->queue(cookie('TimeClockLocation', $store->name, 10));
+            }
+        }
 
+        return $data = array('status' => 'ok', 'url' => '/' );
+    }
 
+    public function login(CookieJar $cookieJar)
+    {
+        $orgPin = Input::get('orgPin');
+        $storePin = Input::get('storePin');
+
+        $org = DB::table('organizations')->where('pin', '=', $orgPin)->first();
+
+        if ($org == null) {
+            return redirect('/');
+        } else {
+            $store = DB::table('stores')->where('pin', '=', $storePin)->where('OrganizationID', '=', $org->id)->first();
+            if ($store == null) {
+                return redirect('main');
+            } else {
+                $cookieJar->queue(cookie('TimeClockLocation', $store->name, 10));
+            }
+        }
+
+        return $data = array('status' => 'ok', 'url' => '/' );
     }
 
     /**

@@ -11,8 +11,23 @@ $(document).ready(function () {
         $(pin).val(pin.val() + text);
     });
 
+    $('.empnum').click(function  (){
+        var num = $(this);
+        var text = $.trim(num.find('.txt').clone().children().remove().end().text());
+        var pin = $('#emppin');
+        $(emppin).val(pin.val() + text);
+    })
+
     $("#remove").click(function () {
         $(pin).val(
+            function(index, value){
+                return value.substr(0, value.length -1);
+            }
+        )
+    })
+
+    $("#empremove").click(function () {
+        $(emppin).val(
             function(index, value){
                 return value.substr(0, value.length -1);
             }
@@ -30,10 +45,23 @@ $(document).ready(function () {
                 url: 'main',
                 data: {orgPin: orgPin, storePin: $(pin).val(), _token: $('meta[name="csrf-token"]').attr('content')},
                 success: function (data) {
-                    return data;
+                    if ( data.status == 'ok' )
+                        window.location.replace(data.url);
                 }
             })
         }
+    });
 
+    $("#empok").click(function () {
+
+        $.ajax({
+            type: 'POST',
+            url: 'empmain',
+            data: {empPin: $(emppin).val(), _token: $('meta[name="csrf-token"]').attr('content')},
+            success: function (data) {
+                if ( data.status == 'ok' )
+                    window.location.replace(data.url);
+            }
+        })
     });
 });
